@@ -1,0 +1,38 @@
+Layout:
+
+<Nav /> // Incluye click en logo que llega a home y para cambiar de dark/light mode
+
+Páginas:
+
+HOME: /
+
+En esta aparecen las cards de todos los paises, se puede filtrar por continente y buscar un pais determinado.
+
+Componentes: 
+
+<CountrySearchBox /> //Permite busqueda dinamica, consulta la api de graphql en tiempo real y se van modificando lo que se muestra a medida q tipeamos
+
+<ContinentFilter /> //Permite filtrar lo que se muestra en la CountryCardGrid, según continente
+
+<CountryCardGrid /> //Muestra por default todos los paises, y responde a la busqueda y filtro.
+
+DETAIL: /[countryCode]
+
+Al clickear una card en el inicio nos lleva a la detail view de ese país donde aparece más info
+
+Componentes:
+
+<BackButton /> //Para volver al inicio
+
+<CountryInfo /> //Componente que muestra la bandera grande, y en desktop a la derecha toda la info.
+
+
+
+
+colors: {
+        "darkBlue": "hsl(209, 23%, 22%)",
+        "veryDarkBlueBg": "hsl(207, 26%, 17%)",
+        "darkBlueText": "hsl(200, 15%, 8%)",
+        "darkGrayInput": "hsl(0, 0%, 52%)",
+        "veryLightGrayBg": "hsl(0, 0%, 98%)",
+      }
