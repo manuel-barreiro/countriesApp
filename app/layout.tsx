@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "@/components/theme-provider"
-import { Nunito_Sans } from "next/font/google";
 import "./globals.css";
-import NavBar from "@/components/NavBar";
 
-const nunitoSans = Nunito_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,17 +13,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
-      <body className={nunitoSans.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <NavBar />
+    <html lang="en">
+      <body>
           {children}
-        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,4 +1,14 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+  
+body {
+  background-color:hsla(230,36%,9%,1);
+  background-image:
+  radial-gradient(at 100% 0%, hsla(276,31%,24%,1) 0px, transparent 50%),
+  radial-gradient(at 0% 100%, hsla(208,31%,24%,1) 0px, transparent 50%);
+}
   

@@ -1,37 +1,10 @@
-export interface CountryCardInfo {
-  name: string,
-  capital: string,
-  region: string,
-  population: number,
-  flag: string,
-  alpha3Code: string
-}
-
-export interface CountryDetailInfo {
+export interface CountryData {
   name: string;
-  alpha3Code: string;
-  capital: string;
-  nativeName: string;
-  region: string;
-  subregion: string;
-  population: number;
-  topLevelDomain: string[];
-  borders: string[];
-  currencies: ({
-    node: {
-        name: string;
-    };
-} | {
-    node: {
-        name: null;
-    };
-})[];
-  languages: {
-    edges: {
-        node: {
-            name: string;
-        };
-    }[];
-};
-  flag: string;
-};
+  capital: string | null;
+  states: { name: string }[];
+  phone: string;
+  emoji: string;
+  emojiU: string;
+  currencies: string[];
+  languages: { name: string }[];
+}

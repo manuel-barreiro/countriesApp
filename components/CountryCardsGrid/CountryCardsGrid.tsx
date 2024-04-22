@@ -1,25 +1,22 @@
 import React from 'react'
-import CountryCard from './CountryCard'
-import { CountryCardInfo } from '@/types'
-import Link from 'next/link'
+import CountryCard from './CountryCard/CountryCard'
+import { CountryData } from '@/types'
 
-type CountryGridProps = {
-  allCountries: [{node: CountryCardInfo}]
-}
-
-function CountryCardsGrid({ allCountries }: CountryGridProps) {
+function CountryCardsGrid({ allCountries }: { allCountries: CountryData[] }): JSX.Element {
 
   return (
-    <section className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-14 px-14'>
+    <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3'>
       {allCountries.map((country, index) => 
         <CountryCard 
           key={index}
-          name={country.node.name} 
-          capital={country.node.capital} 
-          region={country.node.region} 
-          alpha3Code={country.node.alpha3Code} 
-          population={country.node.population} 
-          flag={country.node.flag} 
+          name={country.name} 
+          capital={country.capital} 
+          states={country.states}
+          phone={country.phone}
+          emoji={country.emoji}
+          emojiU={country.emojiU}
+          currencies={country.currencies}
+          languages={country.languages}
         />
       )}
     </section> 

@@ -19,11 +19,14 @@ const config = {
     },
     extend: {
       colors: {
-        "darkBlue": "hsl(209, 23%, 22%)",
-        "veryDarkBlueBg": "hsl(207, 26%, 17%)",
-        "darkBlueText": "hsl(200, 15%, 8%)",
-        "darkGrayInput": "hsl(0, 0%, 52%)",
-        "veryLightGrayBg": "hsl(0, 0%, 98%)",
+        "currencyChipCyan": "#2DCAB1",
+        "languageChipBlue": "#4A94CC",
+        "cardBgGray": "#535659",
+        "buttonBorderGray": "#343847",
+      },
+      fontFamily: {
+        openSans: ['"Open Sans"', "sans-serif"],
+        inter: ['"Inter"', "sans-serif"]
       },
       keyframes: {
         "accordion-down": {
