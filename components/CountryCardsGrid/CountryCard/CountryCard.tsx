@@ -8,7 +8,7 @@ function CountryCard({name, capital, phone, emoji, emojiU, currencies, languages
   
   return (
 
-        <div className="flex flex-col gap-2 shadow-lg rounded-2xl hover:scale-105 transition-all ease-out duration-500 cursor-pointer font-openSans bg-buttonBorderGray border-cardBgGray border-2 text-white p-6">
+        <div className="flex flex-col gap-2 shadow-lg rounded-2xl hover:scale-105 transition-all ease-out duration-500 font-openSans bg-buttonBorderGray border-cardBgGray border-2 text-white p-6">
           
           {/* To do: abstract the following to CardHeader, CurrencyInfo and LanguageInfo components */}
           <div className="flex items-center gap-2">
@@ -33,7 +33,7 @@ function CountryCard({name, capital, phone, emoji, emojiU, currencies, languages
                 </span>
                 <span className="flex items-center gap-1">
                   <Image src={"/phone.svg"} alt="capital" width={12} height={10} /> 
-                  +{phone}
+                  +{phone.split(',')[0]}
                 </span>
               </div>
 
@@ -77,11 +77,15 @@ function CountryCard({name, capital, phone, emoji, emojiU, currencies, languages
                   <span>+{languages.length - 2}</span>
                 </div>
               )
-                : 
-              
+                : languages.length !== 0 ?
+
+              (
               languages.map((lang,index) => (
                 <LanguageChip key={index} language={lang.name} />
-              ))
+              )) 
+              ) 
+              
+              : <p className="text-sm">No language data</p>
 
             }
             </div>
